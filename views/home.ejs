@@ -5,6 +5,7 @@
     <title>Hello</title>
     <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
+      var n = 2;
       function show(){
         alert('123');
       }
@@ -21,9 +22,20 @@
           var currentNum = parseInt($(this).html());
           $(this).html(currentNum + 1);
         });
+        $('#btn-append').click(() => {
+          $('#ul-list').append('<li>'+ ++n +'</li>')
+        });
 
+        $('#btn-red').click(() => {
+          $('li').addClass('my-li')
+        });
       });
     </script>
+    <style media="screen">
+      .my-li{
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <h1>KhoaPham Training</h1>
@@ -31,5 +43,12 @@
     <p id="num">0</p>
     <button id="btn-add">Add</button>
     <button id="btn-num">0</button>
+    <ul id="ul-list">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+    <button id="btn-append">Append</button>
+    <button id="btn-red">Red</button>
   </body>
 </html>
