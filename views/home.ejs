@@ -9,14 +9,21 @@
         alert('123');
       }
       console.log('Hello');
-      $(document).ready(function(){
-        console.log('Da tai xong');
+      $(document).ready(() => {
+        $('#btn-show').click(() => alert('Hello'));
+
+        $('#btn-add').click(() => {
+          var currentNum = parseInt($('#num').html());
+          $('#num').html(currentNum + 1);
+        });
       });
       console.log('Hello 222');
     </script>
   </head>
   <body>
     <h1>KhoaPham Training</h1>
-    <button onclick="show();">Hello</button>
+    <button id="btn-show">Hello</button>
+    <p id="num">0</p>
+    <button id="btn-add">Add</button>
   </body>
 </html>
