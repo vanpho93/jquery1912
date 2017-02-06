@@ -22,6 +22,13 @@ app.get('/cong/:a/:b', (req, res) => {
 });
 
 app.post('/cong', parser, (req, res) => {
-  var {a, b} = req.body;
-  res.send(parseInt(a) + parseInt(b) + '');
+  var {a, b} = req.params;
+  var kq = +a + (+b);
+  console.log(kq);
+  var result = {
+    ketqua: kq,
+    soa: 1,
+    sob: 55
+  }
+  res.json(result);
 });

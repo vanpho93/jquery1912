@@ -8,9 +8,9 @@
         $('#btn-fetch').click(() => {
           var soa = $('#txt-soa').val();
           var sob = $('#txt-sob').val();
-          //$.get(`/cong/${soa}/${sob}`, data => alert(data));
+          // $.get(`/cong/${soa}/${sob}`, data => console.log(data));
 
-          $.post('/cong', {a: soa, b: sob}, data => alert(data));
+          $.post('/cong', {a: soa, b: sob}, data => console.log(data));
         });
       });
     </script>
