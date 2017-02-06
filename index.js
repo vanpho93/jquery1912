@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+
+var parser = require('body-parser').urlencoded({extended: false});
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -15,5 +18,10 @@ app.get('/jquery', (req, res) => {
 
 app.get('/cong/:a/:b', (req, res) => {
   var {a, b} = req.params;
+  res.send(parseInt(a) + parseInt(b) + '');
+});
+
+app.post('/cong', parser, (req, res) => {
+  var {a, b} = req.body;
   res.send(parseInt(a) + parseInt(b) + '');
 });
