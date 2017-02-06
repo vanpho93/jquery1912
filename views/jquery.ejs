@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        $('#btn-fetch').click(() => {
+          var soa = $('#txt-soa').val();
+          var sob = $('#txt-sob').val();
+          $.get(`/cong/${soa}/${sob}`, data => alert(data));
+        });
+      });
+    </script>
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello jQuery</h1>
+    <input type="number" id="txt-soa" placeholder="Số a">
+    <br><br>
+    <input type="number" id="txt-sob" placeholder="Số b">
+    <br><br>
+    <button id="btn-fetch">Cong</button>
+  </body>
+</html>

@@ -8,3 +8,12 @@ app.listen(3000, () => console.log('Server started.'));
 app.get('/', (req, res) => {
   res.render('home');
 });
+
+app.get('/jquery', (req, res) => {
+  res.render('jquery');
+})
+
+app.get('/cong/:a/:b', (req, res) => {
+  var {a, b} = req.params;
+  res.send(parseInt(a) + parseInt(b) + '');
+});
