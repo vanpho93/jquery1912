@@ -5,10 +5,18 @@
     <title>Hello</title>
     <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
+      function show(){
+        alert('123');
+      }
       console.log('Hello');
+      $(document).ready(function(){
+        console.log('Da tai xong');
+      });
+      console.log('Hello 222');
     </script>
   </head>
   <body>
     <h1>KhoaPham Training</h1>
+    <button onclick="show();">Hello</button>
   </body>
 </html>
